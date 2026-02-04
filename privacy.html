@@ -3,67 +3,136 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>xzx吃药提醒助手 - 隐私政策</title>
+    <title>MedRed 隐私政策</title>
     <style>
-        body { 
-            max-width: 800px; 
-            margin: 40px auto; 
-            padding: 20px; 
-            line-height: 1.8; 
+        body {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            line-height: 1.8;
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
             color: #333;
         }
-        h1 { color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 10px; }
-        h2 { color: #34495e; margin-top: 30px; font-size: 1.2em; }
-        .highlight { background: #e8f6f3; padding: 15px; border-radius: 5px; border-left: 4px solid #1abc9c; }
-        ul { padding-left: 20px; }
+
+        h1 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            color: #34495e;
+            margin-top: 30px;
+            font-size: 1.2em;
+        }
+
+        .highlight {
+            background: #e8f6f3;
+            padding: 15px;
+            border-radius: 5px;
+            border-left: 4px solid #1abc9c;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
     </style>
 </head>
 <body>
-    <h1>xzx吃药提醒助手 隐私政策</h1>
+    <h1>MedRed 隐私政策</h1>
     <p><strong>发布日期：</strong>2026年1月28日</p>
-    
+    <p><strong>应用名称：</strong>xzx吃药提醒助手</p>
+    <p><strong>应用包名：</strong>com.companyname.medred</p>
+
     <div class="highlight">
-        <strong>核心承诺：</strong>本应用为纯本地应用，所有数据均存储在您的设备本地，无需联网，不收集任何个人信息。
+        <strong>核心承诺：</strong>MedRed 为纯本地应用，所有数据均存储在您的设备本地，无需联网，不收集任何个人信息。
     </div>
 
-    <h2>1. 我们如何处理您的数据</h2>
-    <p>xzx吃药提醒助手是一款<strong>纯本地运行的提醒工具</strong>。您设置的所有提醒时间、药品名称、服用剂量等信息：</p>
+    <h2>1. 数据处理原则</h2>
+    <p>MedRed 是一款<strong>纯本地运行的服药提醒工具</strong>。您设置的所有提醒时间、药品名称、服用剂量、提醒设置等信息：</p>
     <ul>
         <li>仅保存在您的手机本地数据库中</li>
         <li>不会上传到任何服务器或云端</li>
         <li>不会通过互联网传输到任何地方</li>
+        <li>不会与第三方共享任何数据</li>
         <li>卸载应用后数据将随应用一同删除</li>
     </ul>
 
     <h2>2. 权限使用说明</h2>
-    <p>本应用仅申请以下必要权限：</p>
+    <p>本应用仅申请以下必要的系统权限：</p>
     <ul>
-        <li><strong>闹钟/提醒权限：</strong>用于在设定时间发送吃药提醒通知</li>
-        <li><strong>本地存储权限：</strong>用于保存您的提醒设置和记录</li>
-        <li><strong>震动/声音权限：</strong>用于提醒时发出提示（可选）</li>
+        <li><strong>前台服务权限 (FOREGROUND_SERVICE)</strong>：用于在后台持续运行提醒服务，确保准时提醒</li>
+        <li><strong>通知权限 (POST_NOTIFICATIONS)</strong>：用于在设定时间发送服药提醒通知</li>
+        <li><strong>精确闹钟权限 (SCHEDULE_EXACT_ALARM)</strong>：用于设置精确的提醒时间，确保准时提醒</li>
+        <li><strong>全屏意图权限 (USE_FULL_SCREEN_INTENT)</strong>：用于在锁屏界面显示全屏提醒</li>
+        <li><strong>振动权限 (VIBRATE)</strong>：用于在提醒时振动设备（可选）</li>
+        <li><strong>唤醒锁定权限 (WAKE_LOCK)</strong>：在提醒时保持设备唤醒，确保您能看到提醒</li>
+        <li><strong>开机启动权限 (RECEIVE_BOOT_COMPLETED)</strong>：用于在设备重启后自动恢复提醒服务</li>
+        <li><strong>前台服务数据同步权限 (FOREGROUND_SERVICE_DATA_SYNC)</strong>：用于前台服务的数据同步</li>
     </ul>
-    <p>我们不会申请<strong>网络访问权限、位置权限、通讯录权限、相机权限</strong>等敏感权限。</p>
-
-    <h2>3. 第三方服务</h2>
-    <p>本应用不包含任何形式的第三方SDK、广告SDK或数据分析工具，不会与任何第三方共享数据。</p>
-
-    <h2>4. 您的权利</h2>
+    <p>我们<strong>不会申请</strong>以下敏感权限：</p>
     <ul>
-        <li><strong>完全控制权：</strong>您可以随时在应用内修改或删除所有数据</li>
-        <li><strong>数据清除：</strong>卸载应用即可彻底删除所有本地数据</li>
-        <li><strong>无需注册：</strong>使用本应用无需手机号、邮箱或账号注册</li>
+        <li><strong>网络访问权限</strong></li>
+        <li><strong>位置权限</strong></li>
+        <li><strong>通讯录权限</strong></li>
+        <li><strong>相机权限</strong></li>
+        <li><strong>麦克风权限</strong></li>
+        <li><strong>外部存储权限</strong></li>
     </ul>
 
-    <h2>5. 联系我们</h2>
-    <p>如果您对本隐私政策有任何疑问，请通过以下方式联系：</p>
+    <h2>3. 数据存储与安全</h2>
+    <p>所有数据均存储在设备的<strong>内部私有存储空间</strong>中：</p>
     <ul>
-        <li>开发者：xzx</li>
-        <li>联系邮箱：1125874618@qq.com</li>
+        <li>使用设备内置的 SQLite 数据库存储提醒设置</li>
+        <li>使用设备本地文件系统存储应用配置</li>
+        <li>所有数据均经过系统级加密保护</li>
+        <li>其他应用无法访问本应用的私有数据</li>
     </ul>
-    
+
+    <h2>4. 第三方服务与 SDK</h2>
+    <p>本应用集成了以下第三方库，这些库均运行在本地设备上：</p>
+    <ul>
+        <li><strong>CommunityToolkit.Maui</strong>：UI组件和工具</li>
+        <li><strong>CommunityToolkit.Mvvm</strong>：MVVM开发框架</li>
+        <li><strong>Plugin.LocalNotification</strong>：本地通知服务</li>
+        <li><strong>Microsoft.Maui.Controls</strong>：跨平台UI框架</li>
+    </ul>
+    <p><strong>重要提示：</strong>本应用不包含任何广告SDK、分析SDK或第三方数据收集工具。</p>
+
+    <h2>5. 应用功能与数据关联</h2>
+    <p>本应用的功能与数据处理方式：</p>
+    <ul>
+        <li><strong>语音播报功能</strong>：使用设备本地TTS引擎，无需网络连接</li>
+        <li><strong>震动提醒功能</strong>：直接调用设备震动马达，无需数据传输</li>
+        <li><strong>系统闹钟功能</strong>：使用Android系统AlarmManager API</li>
+        <li><strong>后台服务</strong>：使用Android前台服务确保提醒准时触发</li>
+    </ul>
+
+    <h2>6. 您的权利</h2>
+    <ul>
+        <li><strong>数据访问权</strong>：您可以在应用内随时查看所有存储的数据</li>
+        <li><strong>数据修改权</strong>：您可以随时修改或删除任何提醒设置</li>
+        <li><strong>数据删除权</strong>：卸载应用即可彻底删除所有本地数据</li>
+        <li><strong>使用自由</strong>：使用本应用无需注册账号或提供个人信息</li>
+        <li><strong>权限控制</strong>：您可以随时在系统设置中撤销应用权限</li>
+    </ul>
+
+    <h2>7. 儿童隐私保护</h2>
+    <p>本应用不收集任何个人信息，包括儿童的任何信息。我们鼓励家长和监护人在儿童使用本应用时进行指导。</p>
+
+    <h2>8. 隐私政策更新</h2>
+    <p>我们可能会根据需要更新本隐私政策。如有重大变更，我们会在应用内提供显著通知。您继续使用本应用即表示接受更新后的政策。</p>
+
+    <h2>9. 联系我们</h2>
+    <p>如果您对本隐私政策有任何疑问或建议，请通过以下方式联系：</p>
+    <ul>
+        <li><strong>应用名称：</strong>xzx吃药提醒助手</li>
+        <li><strong>开发者：</strong>xzx-001</li>
+        <li><strong>联系邮箱：</strong>3822056498@qq.com</li>
+    </ul>
+
     <p style="margin-top: 40px; padding-top: 20px; border-top: 1px solid #eee; color: #666; font-size: 0.9em;">
-        本隐私政策可能随应用更新而调整，如有变更将通过应用内提示告知用户。
+        本隐私政策最后更新于2026年1月28日。
     </p>
 </body>
 </html>
