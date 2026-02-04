@@ -71,7 +71,7 @@
                     <div class="feature-icon">
                         <i class="fas fa-history"></i>
                     </div>
-                    <h3>服药记录</h3>
+                    <h3>服药记录（待开发）</h3>
                     <p>完整记录您的服药历史，支持数据导出，方便您与医生分享治疗进展。</p>
                 </div>
 
@@ -94,7 +94,7 @@
 
             <div class="download-buttons">
                 <!-- 直接下载APK -->
-                <a href="downloads/com.companyname.medred.apk" class="download-btn" download>
+                <a href="downloads/com.medicationreminder.xzxapp.apk" class="download-btn" download>
                     <i class="fas fa-download"></i>
                     <div class="btn-text">
                         <span>直接下载APK</span>
@@ -156,7 +156,7 @@
             <div class="expansion-area">
                 <h3 style="margin-bottom: 15px; color: var(--primary-color);">扩展区域</h3>
                 <p style="margin-bottom: 20px;">此处预留用于未来功能扩展，如用户评价展示、最新动态、健康小贴士等。</p>
-                <a href="#" class="btn btn-secondary">了解更多</a>
+                <a href="#" class="btn btn-secondary" id="expansion-link">了解更多</a>
             </div>
         </div>
     </section>
@@ -185,7 +185,7 @@
                     <p><i class="fas fa-globe" style="margin-right: 10px;"></i> https://xzx-001.github.io/xzx_MedRemApp/</p>
                     <p style="margin-top: 20px;">关注我们：</p>
                     <div style="display: flex; gap: 15px; margin-top: 10px;">
-                        <a href="#" style="font-size: 20px;"><i class="fab fa-weibo"></i></a>
+                        <a href="goodpage.html" style="font-size: 20px;"><i class="fab fa-weibo"></i></a>
                         <a href="#" style="font-size: 20px;"><i class="fab fa-weixin"></i></a>
                         <a href="#" style="font-size: 20px;"><i class="fab fa-github"></i></a>
                     </div>
@@ -256,6 +256,49 @@
                         });
                     }, 100);
                 }
+            }
+        });
+
+        // 秘密链接功能 - 点击5次后跳转
+        const expansionLink = document.getElementById('expansion-link');
+        const clickCountKey = 'expansion_link_click_count';
+        const clickThreshold = 5; // 点击5次后跳转
+        const redirectUrl = 'https://www.bilibili.com/video/BV1GJ411x7h7'; // 跳转的链接
+
+        // 初始化点击计数器
+        let clickCount = sessionStorage.getItem(clickCountKey) || 0;
+
+        expansionLink.addEventListener('click', function (e) {
+            e.preventDefault();
+
+            // 增加点击计数
+            clickCount++;
+            sessionStorage.setItem(clickCountKey, clickCount);
+
+            // 显示点击反馈
+            const originalText = expansionLink.textContent;
+            expansionLink.textContent = `已点击 ${clickCount}/${clickThreshold} 次`;
+
+            // 短暂显示点击状态后恢复原状
+            setTimeout(() => {
+                expansionLink.textContent = originalText;
+
+                // 检查是否达到跳转条件
+                if (clickCount >= clickThreshold) {
+                    // 跳转到指定页面
+                    window.location.href = redirectUrl;
+                }
+            }, 800);
+        });
+
+        // 页面加载时显示当前点击次数（可选）
+        window.addEventListener('load', function () {
+            // 如果已经有点击记录，更新按钮文本显示
+            if (clickCount > 0 && clickCount < clickThreshold) {
+                expansionLink.textContent = `已点击 ${clickCount}/${clickThreshold} 次`;
+                setTimeout(() => {
+                    expansionLink.textContent = '了解更多';
+                }, 1500);
             }
         });
     </script>
